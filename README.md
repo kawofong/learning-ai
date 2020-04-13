@@ -6,6 +6,12 @@ This project includes Python notebooks that demostrates various artificial intel
 
 - Python 3
 
+## References
+
+- [Microsoft Recommenders (GitHub): Best Practices on recommendation systems](https://github.com/microsoft/recommenders)
+- [Microsoft Forecasting (GitHub): Best Practices on time series forcasting](https://github.com/microsoft/forecasting)
+
+
 ---
 
 ### PLEASE NOTE FOR THE ENTIRETY OF THIS REPOSITORY AND ALL ASSETS
