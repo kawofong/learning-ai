@@ -62,33 +62,31 @@ Two approaches for evaluating model performance are demonstrated along with thei
 
 | Metric | Range | Selection criteria | Description | Reference |
 |--------|-------|--------------------|-------------|-----------|
-|RMSE|$> 0$|The smaller the better.|Measure of average error in predicted ratings.|[link](https://en.wikipedia.org/wiki/Root-mean-square_deviation)|
-|R2|$\leq 1$|The closer to $1$ the better.|Essentially how much of the total variation is explained by the model.|[link](https://en.wikipedia.org/wiki/Coefficient_of_determination)|
-|MSE|$\geq 0$|The smaller the better.|Similar to RMSE but uses absolute value instead of squaring and taking the root of the average.|[link](https://en.wikipedia.org/wiki/Mean_absolute_error)|
-|Explained variance|$\leq 1$|The closer to $1$ the better.|How much of the variance in the data is explained by the model|[link](https://en.wikipedia.org/wiki/Explained_variation)|
+|RMSE|> 0|The smaller the better.|Measure of average error in predicted ratings.|[link](https://en.wikipedia.org/wiki/Root-mean-square_deviation)|
+|R2|<= 1|The closer to $1$ the better.|Essentially how much of the total variation is explained by the model.|[link](https://en.wikipedia.org/wiki/Coefficient_of_determination)|
+|MSE|>= 0|The smaller the better.|Similar to RMSE but uses absolute value instead of squaring and taking the root of the average.|[link](https://en.wikipedia.org/wiki/Mean_absolute_error)|
+|Explained variance|<= 1|The closer to $1$ the better.|How much of the variance in the data is explained by the model|[link](https://en.wikipedia.org/wiki/Explained_variation)|
 
 - **Ranking Metrics**: These are used to evaluate how relevant recommendations are for users
 
 | Metric | Range | Selection criteria | Description | Reference |
-|-----0--|-------|--------------------|-------------|-----------|
-|Precision|$\geq 0$ and $\leq 1$|The closer to $1$ the better.|Measures the proportion of recommended items that are relevant.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
-|Recall|$\geq 0$ and $\leq 1$|The closer to $1$ the better.|Measures the proportion of relevant items that are recommended.|[link](https://en.wikipedia.org/wiki/Precision_and_recall)|
-|Normalized Discounted Cumulative Gain (NDCG)|$\geq 0$ and $\leq 1$|The closer to $1$ the better.|Evaluates how well the predicted items for a user are ranked based on relevance.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
-|Mean Average Precision (MAP)|$\geq 0$ and $\leq 1$|The closer to $1$ the better.|Average precision for each user normalized over all users.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
-|AUC|$\geq 0$ and $\leq 1$|The closer to $1$ the better. 0.5 indicates an uninformative classifier|Depend on the number of recommended items (k).|[link](https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve)|
-|Logloss|$0$ to $\infty$|The closer to $0$ the better.|Logloss can be sensitive to imbalanced datasets.|[link](https://en.wikipedia.org/wiki/Cross_entropy#Relation_to_log-likelihood)|
+|--------|-------|--------------------|-------------|-----------|
+|Precision|>= 0 and <= 1|The closer to $1$ the better.|Measures the proportion of recommended items that are relevant.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
+|Recall|>= 0 and <= 1|The closer to $1$ the better.|Measures the proportion of relevant items that are recommended.|[link](https://en.wikipedia.org/wiki/Precision_and_recall)|
+|Normalized Discounted Cumulative Gain (NDCG)|>= 0 and <= 1|The closer to $1$ the better.|Evaluates how well the predicted items for a user are ranked based on relevance.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
+|Mean Average Precision (MAP)|>= 0 and <= 1|The closer to $1$ the better.|Average precision for each user normalized over all users.|[link](https://spark.apache.org/docs/2.3.0/mllib-evaluation-metrics.html#ranking-systems)|
 
 ## 4. Model Select and Optimize
 
 | Notebook | Description |
-| --- | --- |
+|----------|-------------|
 | [tuning_spark_als](https://github.com/kawo123/recommenders/blob/master/notebooks/04_model_select_and_optimize/tuning_spark_als.ipynb) | Step by step tutorials on how to fine tune hyperparameters for Spark based recommender model (illustrated by Spark ALS) with [Spark native construct](https://spark.apache.org/docs/2.3.1/ml-tuning.html) and [`hyperopt` package](http://hyperopt.github.io/hyperopt/). |
 | [azureml_hyperdrive_surprise_svd](https://github.com/kawo123/recommenders/blob/master/notebooks/04_model_select_and_optimize/azureml_hyperdrive_surprise_svd.ipynb) | Quickstart tutorial on utilizing [Azure Machine Learning service](https://azure.microsoft.com/en-us/services/machine-learning-service/) for hyperparameter tuning of the matrix factorization method SVD from [Surprise library](https://surprise.readthedocs.io/en/stable/). |
 
 ## 5. Operationalize
 
 | Notebook | Description |
-| --- | --- |
+|----------|-------------|
 | [als_movie_o16n](https://github.com/kawo123/recommenders/blob/master/notebooks/05_operationalize/als_movie_o16n.ipynb) | End-to-end examples demonstrate how to build, evaluate, and deploy a Spark ALS based movie recommender with Azure services such as [Databricks](https://azure.microsoft.com/en-us/services/databricks/), [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction), and [Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/). |
 
 ## References
