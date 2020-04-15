@@ -2,9 +2,11 @@
 
 This project includes Python notebooks that demostrates various artificial intelligence use cases
 
-## Prerequisite
+## Table of contents
 
-- Python 3
+2. [Face recognition](./face/README.md)
+2. [Natural Language Processing](./nlp/README.md)
+1. [Recommendation system](./recommendation/README.md)
 
 ## References
 
