@@ -4,9 +4,9 @@ This project includes Python notebooks that demostrates various artificial intel
 
 ## Table of contents
 
-2. [Face recognition](./face/README.md)
-2. [Natural Language Processing](./nlp/README.md)
-1. [Recommendation system](./recommendation/README.md)
+1. [Face recognition](./face)
+2. [Natural Language Processing](./nlp)
+3. [Recommendation system](./recommendation)
 
 ## References
 
