@@ -6,7 +6,7 @@ from keras.applications import vgg16
 model = vgg16.VGG16()
 
 # Load the image file, resizing it to 224x224 pixels (required by this model)
-img = image.load_img("bay.jpg", target_size=(224, 224))
+img = image.load_img("img/bay.jpg", target_size=(224, 224))
 
 # Convert the image to a numpy array
 x = image.img_to_array(img)
