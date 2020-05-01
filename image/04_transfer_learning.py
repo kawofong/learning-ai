@@ -52,15 +52,15 @@ y_train = np.array(labels)
 x_train = vgg16.preprocess_input(x_train)
 
 # Load a pre-trained neural network to use as a feature extractor
-pretrained_nn = vgg16.VGG16(weights='imagenet', include_top=False, input_shape=(64, 64, 3))
+feature_extraction_model = vgg16.VGG16(weights='imagenet', include_top=False, input_shape=(64, 64, 3))
 
 # Extract features for each image (all in one pass)
-features_x = pretrained_nn.predict(x_train)
+features_x = feature_extraction_model.predict(x_train)
 
 # Create a model and add layers
 model = Sequential()
 
-model.add(Flatten(input_shape=x_train.shape[1:]))
+model.add(Flatten(input_shape=features_x.shape[1:]))
 model.add(Dense(256, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
@@ -74,7 +74,7 @@ model.compile(
 
 # Train the model
 model.fit(
-    x_train,
+    features_x,
     y_train,
     epochs=10,
     shuffle=True
@@ -94,7 +94,7 @@ images = np.expand_dims(image_array, axis=0)
 images = vgg16.preprocess_input(images)
 
 # Use the pre-trained neural network to extract features from our test image (the same way we did to train the model)
-features = pretrained_nn.predict(images)
+features = feature_extraction_model.predict(images)
 
 # Given the extracted features, make a final prediction using our own model
 results = model.predict(features)
