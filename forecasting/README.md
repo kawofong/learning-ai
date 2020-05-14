@@ -13,8 +13,8 @@ virtualenv .venv
 source .venv/bin/activate
 cd forecasting/
 # 3. Install pip dependencies
-pip install -r requirements.txt
 pip install -e fclib
+pip install -r requirements.txt
 # 4. Start Jupyter server
 python -m jupyter notebook .
 # Walk through all notebooks in order by notebook name prefix

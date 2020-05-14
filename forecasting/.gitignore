@@ -1,2 +1,10 @@
+# train/test data
 ojdata/train/*.csv
 ojdata/test/*.csv
+ojdata/train.csv
+ojdata/test.csv
+
+# Azure ML
+.azureml/
+*.log
+*.pkl
